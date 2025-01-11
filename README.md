@@ -6,7 +6,7 @@ For this reason, the tool for preliminary diagnosis needs to be developed. This 
 I concentrated my efforts on building a neural network for diagnosing pneumonia besed on X-Ray images.
 
 ## Data
-I used [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) for training and evaluation of the model. This dataset is available for download from Kaggle via the provided url. The dataset is also avaliable in the repository.
+I used [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) dataset for training and evaluation of the model. This dataset is available for download from Kaggle via the provided url. The dataset is also avaliable in the repository.
 ### Data description
 The dataset is split into three folders: train, val, test. Each of these folders contains images of healthy lungs and images of lungs affected by bacterial or viral pneumonia. Each folder is divided into two subdirectories: normal and pneumonia.
 
