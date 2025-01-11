@@ -17,7 +17,13 @@ The test directory includes:
 - 390 images of lungs affected by pneumonia
 
 ## Models
-## Final model
+| **Model**  | **Accuracy** | **Loss** |
+| -------- | -------- | ---- |
+| model_1  | 0.625    | 6.136 |
+| model_2  | 0.741    | 1.02 |
+| model_3  | 0.647    | 2.676  |
+| model_4  | 0.862    | 0.338  |
+| model_5  | 0.839    | 0.447 |
 
 ## Dependencies installation
 Firstly, install pipenv using the following command:
