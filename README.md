@@ -1,4 +1,10 @@
 ## Problem description
+It takes years for doctors to achieve the necessary degree of qualifications so as to become competent to diagnose illnesses, sich as pneumonia. Moreover, patients often have difficulties with making an appointment with a doctor due to long waiting lists and high fees of health caring services.
+
+For this reason, the tool for preliminary diagnosis needs to be developed. This way patients will be able to get relevant insights on their health state before deciding whether to make an appointment with a doctor or not. In addition to this, such tool will also optimize the doctors workloads enabling them to concentrate on curing illnesses, not diagnosing them.
+
+I concentrated my efforts on building a neural network for diagnosing pneumonia besed on X-Ray images.
+
 ## Data
 I used [Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia) for training and evaluation of the model. This dataset is available for download from Kaggle via the provided url. The dataset is also avaliable in the repository.
 ### Data description
@@ -17,7 +23,7 @@ The test directory includes:
 - 390 images of lungs affected by pneumonia
 
 ## Models
-So as to find the most effective model for this problem statement five models were trained. Each model was trained on the dataset described above and augmented data from the same dataset.
+So as to find the most effective model for the problem statement five models were trained. Each model was trained on the dataset described above and augmented data from the same dataset.
 
 ### model_1
 The first model was trained with no pre-trained weights with a single convolutional layer.
