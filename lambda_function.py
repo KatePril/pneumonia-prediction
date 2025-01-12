@@ -1,5 +1,6 @@
 import tflite_runtime.interpreter as tflite
 from keras_image_helper import create_preprocessor
+import json
 
 preprocessor = create_preprocessor('xception', target_size=(200, 200))
 interpreter = tflite.Interpreter(model_path='pneumonia-model.tflite')
@@ -19,5 +20,6 @@ def predict(url):
 
 def lambda_handler(event, context):
     url = event['url']
-    result = predict(url)
-    return result
+    result = predict(url)[0]
+    diagnose = "Lungs affected by pneumonia" if result >= 0.5 else "Normal lungs"
+    return json.dumps({'prediction': result, 'diagnose': diagnose})
