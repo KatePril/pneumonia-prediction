@@ -67,4 +67,27 @@ pipenv install --ignore-pipfile --deploy
 ```
 
 ## Run project locally
+So as to run the project locally, first clone the code from the repository to your local machine:
+```bash
+git clone https://github.com/KatePril/pneumonia-prediction.git
+```
+Navigate to the project directory with a following command:
+```bash
+cd pneumonia-prediction
+```
+Build the docker image:
+```bash
+docker build -t <image-name> .
+```
+Run the image:
+```bash
+docker run -it --rm -p 8080:8080 <image-name>:latest
+```
+
+If you want to test the application using the provided test code, you can use the following command to run the code from the terminal:
+```bash
+python test.py
+```
+You can raplace the url with an url of your image
+
 ## Deployment
