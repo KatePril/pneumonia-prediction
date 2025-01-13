@@ -91,3 +91,34 @@ python test.py
 You can raplace the url with an url of your image
 
 ## Deployment
+So as to deploy the container to the cloud, you need to create AWS account, [install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and log in to AWS CLI using the following command:
+```bash
+aws configure
+```
+If you haven't built the docker image yet, run the following command:
+```bash
+docker build -t <image-name> .
+```
+Then push the image to Elastic Container Registry with the following commands:
+```bash
+aws ecr create-repository --repository-name <repository-name> --region <your-region>
+```
+```bash
+docker tag <image-name> <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/<repository-name>
+```
+```bash
+aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com
+```
+```bash
+docker push <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/<repository-name>
+```
+Verify the successful creation of container creation in [AWS Console](https://signin.aws.amazon.com/signup?request_type=register) in Elastic Container Registry.
+Navigate to Lambda service, click **Create function**, select **Container image**, enter the function name. Then, select the repository you pushed the image to and select the image. you can leave the rest of the settings as default.
+ 
+![image](https://github.com/user-attachments/assets/027c205b-71ca-4f04-81b1-0daea3c1b7a2)
+Wait for a couple of moments for function to be created.
+
+### Deployment demonstration
+
+https://github.com/user-attachments/assets/fdbb0921-c83a-48fc-a901-dbb58ad513aa
+
